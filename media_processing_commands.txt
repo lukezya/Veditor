@@ -1,0 +1,12 @@
+ffmpeg -ss 00:16:57 -i Ninja_Video_1_Trim_2.mp4 -to 00:17:12 -c copy work4.mp4
+
+
+
+
+ffmpeg -i Ninja_Video_1_Trim_2.mp4 -ss 00:16:57 -to 00:17:12 input4.mp4 - re-encode rather than copy
+
+//get list in textfile
+(for %i in (*.mp4) do @echo file '%i') > mylist.txt
+
+
+ffmpeg -f concat -i mylist.txt -c copy output.mp4
